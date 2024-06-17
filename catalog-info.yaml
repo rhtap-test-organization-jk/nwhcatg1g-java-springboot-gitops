@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nwhcatg1g-java-springboot-gitops
+  description: This is GitOps manifest for nwhcatg1g-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: nwhcatg1g-java-springboot
+    janus-idp.io/tekton: nwhcatg1g-java-springboot 
+    backstage.io/kubernetes-id: nwhcatg1g-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nwhcatg1g-java-springboot
